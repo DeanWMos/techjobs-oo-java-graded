@@ -39,65 +39,82 @@ public class Job {
 
     @Override
     public String toString() {
-
-        if (getEmployer().toString() == "" || getEmployer() == null){
-            return employer.setValue();
-        };
+        if (name.toString() == "" || name == null) {
+            name = "Nothing";
+        }
+        if (employer.toString() == "" || employer == null) {
+            employer.setValue("Nothing");
+        }
+        if (location.toString() == "" || location == null) {
+            location.setValue("Nothing");}
+        if (positionType.toString() == "" || positionType == null) {
+            positionType.setValue("Nothing");
+        }
+        if (coreCompetency.toString() == "" || coreCompetency == null) {
+            coreCompetency.setValue("Nothing");
+        }
+        return "\nid" + id +
+        "\nEmployer" + employer +
+                "\nLocation" + location +
+                "\nPosition Type" + positionType +
+                "\n Core Competency" + coreCompetency;
     }
 
-    @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-       Job job = (Job)o;
-        return id == job.id;
-    }
+        @Override
+        public boolean equals (Object o){  // Two objects are equal if they have the same id.
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Job job = (Job) o;
+            return id == job.id;
+        }
 
-    private int getId() { return id; }
+        private int getId () {
+            return id;
+        }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+        @Override
+        public int hashCode () {
+            return Objects.hash(id);
+        }
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
+        // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+        //  and id.
 
-    public String getName() {
-        return name;
-    }
-    public Employer getEmployer() {
-        return employer;
-    }
+        public String getName () {
+            return name;
+        }
+        public Employer getEmployer(){
+            return employer;
+        }
 
-    public Location getLocation() {
-        return location;
-    }
+        public Location getLocation () {
+            return location;
+        }
 
-    public PositionType getPositionType() {
-        return positionType;
-    }
+        public PositionType getPositionType () {
+            return positionType;
+        }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
-    }
+        public CoreCompetency getCoreCompetency () {
+            return coreCompetency;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public void setName (String name){
+            this.name = name;
+        }
 
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
-    }
+        public void setEmployer (Employer employer){
+            this.employer = employer;
+        }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+        public void setLocation (Location location){
+            this.location = location;
+        }
 
-    public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
+        public void setPositionType (PositionType positionType){
+            this.positionType = positionType;
+        }
+        public void setCoreCompetency (CoreCompetency coreCompetency){
+            this.coreCompetency = coreCompetency;
+        }
     }
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
-    }
-}
