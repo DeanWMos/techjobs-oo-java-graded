@@ -37,42 +37,27 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
+    @Override
+    public String toString() {
+
+        if (getEmployer().toString() == "" || getEmployer() == null){
+            return employer.setValue();
+        };
+    }
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
-        if (!(o instanceof Job)) return false;
-//        if (!(o instanceof Employer)) return false;
-//        if (!(o instanceof Location)) return false;
-//        if (!(o instanceof PositionType)) return false;
-//        if (!(o instanceof CoreCompetency)) return false;
-//        String name = (String) o;
-//        Employer employer = (Employer) o;
-//        Location location = (Location) o;
-//        PositionType positionType = (PositionType) o;
-//        CoreCompetency coreCompetency = (CoreCompetency) o;
+        if (o == null || getClass() != o.getClass()) return false;
        Job job = (Job)o;
-        return getId() == this.getId();
-//            @Override
-//    public boolean equals(Object p) {
-//                if (this.location == o) return true;
-//                if (!(o instanceof Location)) return false;
-//                Location location = (Location) o;
-//                return getId() == location.getId();
-//            }
-//        if (!(o instanceof PositionType)) return false;
-//        PositionType positionType = (PositionType) o;
-//        return getId() == positionType.getId();
-//        if (!(o instanceof CoreCompetency)) return false;
-//        CoreCompetency coreCompetency = (CoreCompetency) o;
-//        return getId() == coreCompetency.getId();
+        return id == job.id;
     }
 
     private int getId() { return id; }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(id);
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
