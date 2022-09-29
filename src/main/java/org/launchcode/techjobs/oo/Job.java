@@ -30,7 +30,7 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        this.id = nextId;
+//        this.id = nextId;
 
     }
 
@@ -54,6 +54,7 @@ public class Job {
             coreCompetency.setValue("Nothing");
         }
         return "\nid" + id +
+                "\nName" + getName() +
         "\nEmployer" + employer +
                 "\nLocation" + location +
                 "\nPosition Type" + positionType +
@@ -68,7 +69,7 @@ public class Job {
             return id == job.id;
         }
 
-        private int getId () {
+        public int getId() {
             return id;
         }
 
