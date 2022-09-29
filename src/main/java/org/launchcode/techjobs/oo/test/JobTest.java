@@ -33,7 +33,13 @@ public class JobTest {
         assertTrue(testAll.getCoreCompetency() instanceof CoreCompetency);
 
         //Test if equal
-        assertEquals(testAll.getName() = String);
+        assertEquals("Product tester", testAll.getName());
+        assertEquals("ACME", testAll.getEmployer().toString());
+        assertEquals("Desert", testAll.getLocation().toString());
+        assertEquals("Quality control", testAll.getPositionType().toString());
+        assertEquals("Persistence", testAll.getCoreCompetency().toString());
+
+
 
 
     }
