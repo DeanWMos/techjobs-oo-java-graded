@@ -40,18 +40,18 @@ public class Job {
     @Override
     public String toString() {
         if (value.toString() == "" || value == null) {
-            value = "Nothing";
+            value = "Data not available";
         }
         if (employer.toString() == "" || employer == null) {
-            employer.setValue("Nothing");
+            employer.setValue("Data not available");
         }
         if (location.toString() == "" || location == null) {
-            location.setValue("Nothing");}
+            location.setValue("Data not available");}
         if (positionType.toString() == "" || positionType == null) {
-            positionType.setValue("Nothing");
+            positionType.setValue("Data not available");
         }
         if (coreCompetency.toString() == "" || coreCompetency == null) {
-            coreCompetency.setValue("Nothing");
+            coreCompetency.setValue("Data not available");
         }
         return "\nID: " +
                 "\nName: " + value +
