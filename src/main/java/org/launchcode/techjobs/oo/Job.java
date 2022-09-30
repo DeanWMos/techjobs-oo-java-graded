@@ -8,7 +8,7 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private String value;
     private Employer employer;
     private Location location;
     private PositionType positionType;
@@ -23,9 +23,9 @@ public class Job {
         nextId++;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+    public Job(String value, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.name = name;
+        this.value = value;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
@@ -39,8 +39,8 @@ public class Job {
 
     @Override
     public String toString() {
-        if (name.toString() == "" || name == null) {
-            name = "Nothing";
+        if (value.toString() == "" || value == null) {
+            value = "Nothing";
         }
         if (employer.toString() == "" || employer == null) {
             employer.setValue("Nothing");
@@ -54,7 +54,7 @@ public class Job {
             coreCompetency.setValue("Nothing");
         }
         return "\nID: " +
-                "\nName: " + name +
+                "\nName: " + value +
         "\nEmployer: " + employer +
                 "\nLocation: " + location +
                 "\nPosition Type: " + positionType +
@@ -82,7 +82,7 @@ public class Job {
         //  and id.
 
         public String getName () {
-            return name;
+            return value;
         }
         public Employer getEmployer(){
             return employer;
@@ -100,8 +100,8 @@ public class Job {
             return coreCompetency;
         }
 
-        public void setName (String name){
-            this.name = name;
+        public void setName (String value){
+            this.value = value;
         }
 
         public void setEmployer (Employer employer){
