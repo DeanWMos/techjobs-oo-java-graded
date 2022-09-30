@@ -59,7 +59,7 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         Job testAll = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals("\nID: \nName: Product tester \nEmployer: ACME \nLocation: Desert \nPostion Type: Quality Control \nCore Competency: Persistence", testAll.toString());
+        assertEquals("\nID: \nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", testAll.toString());
     }
 
 }

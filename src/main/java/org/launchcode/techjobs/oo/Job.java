@@ -53,12 +53,12 @@ public class Job {
         if (coreCompetency.toString() == "" || coreCompetency == null) {
             coreCompetency.setValue("Nothing");
         }
-        return "\nid" + id +
-                "\nName" + name +
-        "\nEmployer" + employer +
-                "\nLocation" + location +
-                "\nPosition Type" + positionType +
-                "\n Core Competency" + coreCompetency +"\n";
+        return "\nID: " +
+                "\nName: " + name +
+        "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +"\n";
     }
 
         @Override
