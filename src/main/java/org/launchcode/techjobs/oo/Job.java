@@ -54,11 +54,11 @@ public class Job {
             coreCompetency.setValue("Nothing");
         }
         return "\nid" + id +
-                "\nName" + getName() +
+                "\nName" + name +
         "\nEmployer" + employer +
                 "\nLocation" + location +
                 "\nPosition Type" + positionType +
-                "\n Core Competency" + coreCompetency;
+                "\n Core Competency" + coreCompetency +"\n";
     }
 
         @Override
