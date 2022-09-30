@@ -3,13 +3,15 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 public class Employer extends JobField {
-    private String value;
+    public Employer(String value) {
+        super(value);}
+
 
     // Custom toString, equals, and hashCode methods:
 
     @Override
     public String toString() {
-        return value;
+        return getValue();
     }
 
     @Override
@@ -22,8 +24,8 @@ public class Employer extends JobField {
 
 
     // Getters and Setters:
-    public void setValue(String nothinhg) {
-        this.value = value;
-    }
+//    public void setValue(String nothinhg) {
+//        this.setValue(getValue());
+//    }
 
 }
