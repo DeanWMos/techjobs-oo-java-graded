@@ -8,9 +8,9 @@ public class CoreCompetency extends JobField{
     public CoreCompetency (String value) {
         super(value);}
 
-    public CoreCompetency(int id){
-        super(String.valueOf(id));
-    }
+//    public CoreCompetency(int id){
+//        super(String.valueOf(id));
+//    }
 
 
     // Custom toString, equals, and hashCode methods:

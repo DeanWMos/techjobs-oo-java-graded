@@ -53,9 +53,9 @@ public class Job {
         if (getCoreCompetency().toString() == "" || getCoreCompetency() == null) {
             coreCompetency.setValue("Data not available");
         }
-        return "\nID: " +
+        return "\nID: " + getId() +
                 "\nName: " + value +
-        "\nEmployer: " + employer +
+                "\nEmployer: " + employer +
                 "\nLocation: " + location +
                 "\nPosition Type: " + positionType +
                 "\nCore Competency: " + coreCompetency +"\n";
@@ -69,10 +69,6 @@ public class Job {
             return id == job.id;
         }
 
-        public int getId() {
-            return id;
-        }
-
         @Override
         public int hashCode () {
             return Objects.hash(id);
@@ -81,9 +77,9 @@ public class Job {
         // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
         //  and id.
 
-        public String getName () {
-            return value;
-        }
+    public int getId() {
+        return id;
+    }
         public Employer getEmployer(){
             return employer;
         }
@@ -99,6 +95,10 @@ public class Job {
         public CoreCompetency getCoreCompetency () {
             return coreCompetency;
         }
+
+        public String getName () {
+        return value;
+    }
 
         public void setName (String name){
             this.value = name;
