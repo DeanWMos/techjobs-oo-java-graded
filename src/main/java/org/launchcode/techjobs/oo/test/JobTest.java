@@ -50,10 +50,16 @@ public class JobTest {
     }
 
     @Test
-    public void testForToString(){
+    public void testToStringStartsAndEndsWithNewLine (){
         Job testString = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals('\n', testString.toString().charAt(0));
         assertEquals('\n', testString.toString().charAt(testString.toString().length()-1));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job testString = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nID: \nName: Product tester \nEmployer: ACME \nLocation: Desert \nPostion Type: Quality Control \nCore Competency: Persistence");
     }
 
 }
