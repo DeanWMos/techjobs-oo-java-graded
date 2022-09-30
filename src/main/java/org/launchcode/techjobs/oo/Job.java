@@ -23,9 +23,9 @@ public class Job {
         nextId++;
     }
 
-    public Job(String value, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.value = value;
+        this.value = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
@@ -39,18 +39,18 @@ public class Job {
 
     @Override
     public String toString() {
-        if (value.toString() == "" || value == null) {
-            value = "Data not available";
+        if (getName().toString() == "" || getName() == null) {
+            setName("Data not available");
         }
-        if (employer.toString() == "" || employer == null) {
+        if (getEmployer().toString() == "" || getEmployer() == null) {
             employer.setValue("Data not available");
         }
-        if (location.toString() == "" || location == null) {
+        if (getLocation().toString() == "" || getLocation() == null) {
             location.setValue("Data not available");}
-        if (positionType.toString() == "" || positionType == null) {
+        if (getPositionType().toString() == "" || getPositionType() == null) {
             positionType.setValue("Data not available");
         }
-        if (coreCompetency.toString() == "" || coreCompetency == null) {
+        if (getCoreCompetency().toString() == "" || getCoreCompetency() == null) {
             coreCompetency.setValue("Data not available");
         }
         return "\nID: " +
@@ -100,8 +100,8 @@ public class Job {
             return coreCompetency;
         }
 
-        public void setName (String value){
-            this.value = value;
+        public void setName (String name){
+            this.value = name;
         }
 
         public void setEmployer (Employer employer){
