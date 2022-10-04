@@ -62,4 +62,17 @@ public class JobTest {
         assertEquals("\nID: \nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", testAll.toString());
     }
 
-}
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job testJobNoName = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        Job testJobNoEmployer = new Job("Product Tester", new Employer(""), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        Job testJobNoLocation = new Job("Product Tester", new Employer("ACME"), new Location(""), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        Job testJobNoPositionType = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
+        Job testJobNoCoreCompetency = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency(""));
+        assertEquals("\nID: \nName: Data not available\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality Control\nCore Competency: Persistence\n", testJobNoName.toString());
+        assertEquals("\nID: 7\nName: Product Tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality Control\nCore Competency: Persistence\n", testJobNoEmployer.toString());
+        assertEquals("\nID: 5\nName: Product Tester\nEmployer: ACME\nLocation: Data not available\nPosition Type: Quality Control\nCore Competency: Persistence\n", testJobNoLocation.toString());
+        assertEquals("\nID: 4\nName: Product Tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Data not available\nCore Competency: Persistence\n", testJobNoPositionType.toString());
+        assertEquals("\nID: 3\nName: Product Tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality Control\nCore Competency: Data not available\n", testJobNoCoreCompetency.toString());
+
+}}
